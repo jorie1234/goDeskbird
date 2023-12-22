@@ -21,9 +21,23 @@ func main() {
 		fmt.Println("No login or pwd")
 		return
 	}
+<<<<<<< HEAD
 	token := "eyJhbGciOiJSUzI1NiIsImtpZCI6IjAzZDA3YmJjM2Q3NWM2OTQyNzUxMGY2MTc0ZWIyZjE2NTQ3ZDRhN2QiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZGVza2JpcmQtYmJlNzIiLCJhdWQiOiJkZXNrYmlyZC1iYmU3MiIsImF1dGhfdGltZSI6MTY4MjA1MjEyNiwidXNlcl9pZCI6InlETnRVbUp3eWZicXNkZXlOVHE3YVlYWk9OcjEiLCJzdWIiOiJ5RE50VW1Kd3lmYnFzZGV5TlRxN2FZWFpPTnIxIiwiaWF0IjoxNjk3NzI0NzA3LCJleHAiOjE2OTc3MjgzMDcsImVtYWlsIjoiam9uYXMucmllZGVsQHZpZXIuYWkiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJtaWNyb3NvZnQuY29tIjpbImNiZWQ1OGRlLTlmYjUtNDE3MC04OGI0LTFjNDdmYTc2NjQwNiJdLCJlbWFpbCI6WyJqb25hcy5yaWVkZWxAdmllci5haSJdfSwic2lnbl9pbl9wcm92aWRlciI6Im1pY3Jvc29mdC5jb20ifX0.KbTObnrZwOYuiM8T_H8HxIGc9sKAy_oRWMLexBbOUXGU7cNm6E1lQnKzw_rwtbn76hm42BOvU-2Lr-V3AVCpEy84wjqXELBdOTHgl_OzCzd1buT0s6dYPYtVSKXstuIAyNRoXPX4ZdGTXYxz5MHoTvorFQW9wuopDG4pPM4_ifhGhqRioEtDU4FyclTKReP-toekHmepreTQmPOtea2YNECyYmkG8V2m4SJDNGYcFsjGV32N7M0SfsSk1JTVl9agnw6Of7FPAod1WILdPTGV1t1LSY505DfhRKHQ8JEFuzzyVxqBPmdbhLV0kN9PrFu9lsuWmpf6cEA8kQKK_2OktA"
 	GetUser(token)
 	LoadLogin(token)
+=======
+	token := "eyJhbGciOiJSUzI1NiIsImtpZCI6ImY5N2U3ZWVlY2YwMWM4MDhiZjRhYjkzOTczNDBiZmIyOTgyZTg0NzUiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZGVza2JpcmQtYmJlNzIiLCJhdWQiOiJkZXNrYmlyZC1iYmU3MiIsImF1dGhfdGltZSI6MTY4Njg1MzQ2MCwidXNlcl9pZCI6InlETnRVbUp3eWZicXNkZXlOVHE3YVlYWk9OcjEiLCJzdWIiOiJ5RE50VW1Kd3lmYnFzZGV5TlRxN2FZWFpPTnIxIiwiaWF0IjoxNjg4MjI1MjY0LCJleHAiOjE2ODgyMjg4NjQsImVtYWlsIjoiam9uYXMucmllZGVsQHZpZXIuYWkiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJtaWNyb3NvZnQuY29tIjpbImNiZWQ1OGRlLTlmYjUtNDE3MC04OGI0LTFjNDdmYTc2NjQwNiJdLCJlbWFpbCI6WyJqb25hcy5yaWVkZWxAdmllci5haSJdfSwic2lnbl9pbl9wcm92aWRlciI6Im1pY3Jvc29mdC5jb20ifX0.KIykwvBsHJpI5TBWLlX-iz4qjj73THdSHqnKiFLmFZ1z3xyKzCKHeodxSFLk_pIqMHvj6fF1xk-9n_yGyqe6xbvpCtvQtemV6DZoefUC6MiczI3tccBzoicio0iOHCfFQCFUOd_NpXJVJD2tyEarELXKzpTlrn_2lN7GKf-4kVe-abN7W4-IoaXafhNthJUIuY-B9yMqaJuzFlfoEb1cCHGEItLxdTL0gkEwqc1hHi2Y2u7ReOt71BoZhs4xWqFpUf8zUy1KXcoDSVn9SzFkzI-T6qmxq39omHagvFvuogTQf_mYo1A-9QpbT67qUfBnio4jkaq_gk76u8CWEdBzLA"
+	err := GetUser(token)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	err = LoadLogin(token)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+>>>>>>> f197356f838e4b7fa56c6eb1eb6042906722b826
 
 }
 
@@ -49,7 +63,11 @@ func LoadLogin(token string) error {
 			Client(&cl).
 			Header("authorization", "Bearer "+token).
 			Handle(requests.ToJSON(&db)).
+<<<<<<< HEAD
 			//Transport(requests.Record(nil, "")).
+=======
+			Transport(requests.Record(nil, "")).
+>>>>>>> f197356f838e4b7fa56c6eb1eb6042906722b826
 			Fetch(context.Background())
 		if err != nil {
 			return err
@@ -94,10 +112,16 @@ func GetUser(token string) error {
 		Client(&cl).
 		Header("authorization", "Bearer "+token).
 		Handle(requests.ToJSON(&db)).
+<<<<<<< HEAD
 		//Transport(requests.Record(nil, "")).
 		Fetch(context.Background())
 	if err != nil {
 		//fmt.Println(err)
+=======
+		Transport(requests.Record(nil, "")).
+		Fetch(context.Background())
+	if err != nil {
+>>>>>>> f197356f838e4b7fa56c6eb1eb6042906722b826
 		return err
 	}
 
